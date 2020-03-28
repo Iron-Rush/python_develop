@@ -37,7 +37,7 @@ def printUnivList(ulist, num):
     print(tplt.format("排名", "学校名称", "总分", chr(12288)))
     for i in range(num):
         u = ulist[i]
-        # print("{:^10}\t{:^10}\t{:^10}".format(u[0], u[1], u[2]))
+        # print("{0:^10}\t{1:^10}\t{2:^10}".format(u[0], u[1], u[2]))
         # 优化输出，利用tplt模版，和chr(12288)中文占位符
         print(tplt.format(u[0], u[1], u[2], chr(12288)))
     # printUnivList("Suc" + str(num))
@@ -50,5 +50,5 @@ def main():
         print(html)
     else:
         fillUnivList(uinfo, html)   #将HTML信息提取后放到uinfo中
-        printUnivList(uinfo, 20)    #列出前20的大学信息
+        printUnivList(uinfo, 40)    #列出前20的大学信息
 main()
