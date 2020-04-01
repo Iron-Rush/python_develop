@@ -1,0 +1,2 @@
+# ScrapyStudy.py
+import scrapy
