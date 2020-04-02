@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for pythondemo project
+# Scrapy settings for BaiduStocks project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'pythondemo'
+BOT_NAME = 'BaiduStocks'
 
-SPIDER_MODULES = ['pythondemo.spiders']
-NEWSPIDER_MODULE = 'pythondemo.spiders'
-FEED_EXPORT_ENCODING = 'utf-8'
+SPIDER_MODULES = ['BaiduStocks.spiders']
+NEWSPIDER_MODULE = 'BaiduStocks.spiders'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'pythondemo (+http://www.yourdomain.com)'
+#USER_AGENT = 'BaiduStocks (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'pythondemo.middlewares.PythondemoSpiderMiddleware': 543,
+#    'BaiduStocks.middlewares.BaidustocksSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'pythondemo.middlewares.PythondemoDownloaderMiddleware': 543,
+#    'BaiduStocks.middlewares.BaidustocksDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,9 +64,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'pythondemo.pipelines.PythondemoPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   # 'BaiduStocks.pipelines.BaidustocksPipeline': 300,
+   'BaiduStocks.pipelines.BaidustocksInfoPipeline' :300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
