@@ -9,6 +9,7 @@ def getHTMLText(url):
         r = requests.get(url, timeout=30, headers=kv)
         r.raise_for_status()
         r.encoding = r.apparent_encoding
+        print(r.encoding)
         # print(r.text)
         return r.text
     except:
@@ -41,7 +42,7 @@ def printGoodsList(ilt):
         print(tplt.format(count, g[0], g[1]))
 
 def writeHTML(path, txt):
-    f = open(path, 'w+')
+    f = open(path, 'w+', encoding='utf-8')
     f.write(txt)
     f.close()
 
@@ -60,4 +61,8 @@ def main():
             print('error')
             continue
     printGoodsList(infoList)
+
+    # url = 'https://lottiefiles.com/featured?page=1'
+    # html = getHTMLText(url)
+    # writeHTML('lottie.html', html)
 main()
