@@ -12,6 +12,8 @@ class ImageObject:
             self.data = None
     def __add__(self, other):
         image = ImageObject()
+        # 直接使用np.array对象的加法，利用np.mod()函数对元素取模
+        # RGB颜色范围是0-255，任何异常则将第一个加数的图像作为输出
         try:
             image.data = np.mod(self.data + other.data, 255)
         except:
